@@ -62,7 +62,7 @@ export const CustomDrawerContent = (props) => {
               <Text style={styles.navLabel}>Coupons</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.navItem} onPress={() => go('Customers')}>
+            <TouchableOpacity style={styles.navItem} onPress={() => go('MainTabs', { screen: 'CustomersTab' })}>
               <Ionicons name="people-outline" size={22} color={Colors.text} />
               <Text style={styles.navLabel}>Customers</Text>
             </TouchableOpacity>

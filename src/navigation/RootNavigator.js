@@ -7,7 +7,6 @@ import { ProductDetailsScreen } from '../screens/ProductDetailsScreen';
 import { EditProfileScreen } from '../screens/EditProfileScreen';
 import { CartScreen } from '../screens/CartScreen';
 import { FavoritesScreen } from '../screens/FavoritesScreen';
-import { CustomersScreen } from '../screens/CustomersScreen';
 import { useApp } from '../context/AppContext';
 import { Colors } from '../theme/colors';
 
@@ -45,8 +44,6 @@ export const RootNavigator = () => {
             }}
           />
           <Stack.Screen name="EditProfile" component={EditProfileScreen} />
-          {/* Admin-only screens */}
-          {isAdmin && <Stack.Screen name="Customers" component={CustomersScreen} />}
           {/* Shopping screens exist only for Customers */}
           {!isAdmin && (
             <>

@@ -120,7 +120,7 @@ export const ProfileScreen = () => {
               <OptionItem
                 icon="people-outline"
                 label="View Customers"
-                onPress={() => navigation.navigate('Customers')}
+                onPress={() => navigation.navigate('Main', { screen: 'MainTabs', params: { screen: 'CustomersTab' } })}
               />
             </>
           ) : (

@@ -67,7 +67,6 @@ export const CustomersScreen = () => {
       <AppHeader
         title="Customers"
         subtitle={`Admin • ${customers.length} registered`}
-        showBack
         showCart={false}
       />
 

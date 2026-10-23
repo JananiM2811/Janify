@@ -8,6 +8,7 @@ import { CartScreen } from '../screens/CartScreen';
 import { ProfileScreen } from '../screens/ProfileScreen';
 import { AnalyticsScreen } from '../screens/AnalyticsScreen';
 import { CouponsScreen } from '../screens/CouponsScreen';
+import { CustomersScreen } from '../screens/CustomersScreen';
 import { useApp } from '../context/AppContext';
 import { Colors } from '../theme/colors';
 
@@ -63,7 +64,7 @@ export const BottomTabNavigator = () => {
         }}
       />
 
-      {/* Analytics & Coupons are Store Owner-only tabs */}
+      {/* Analytics, Coupons & Customers are Admin-only tabs */}
       {isAdmin && (
         <>
           <Tab.Screen
@@ -89,6 +90,21 @@ export const BottomTabNavigator = () => {
               tabBarIcon: ({ color, focused }) => (
                 <Ionicons
                   name={focused ? 'pricetags' : 'pricetags-outline'}
+                  size={22}
+                  color={color}
+                />
+              ),
+            }}
+          />
+
+          <Tab.Screen
+            name="CustomersTab"
+            component={CustomersScreen}
+            options={{
+              tabBarLabel: 'Customers',
+              tabBarIcon: ({ color, focused }) => (
+                <Ionicons
+                  name={focused ? 'people' : 'people-outline'}
                   size={22}
                   color={color}
                 />
