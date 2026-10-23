@@ -2,6 +2,22 @@
 
 A mobile grocery shopping application built with **React Native & Expo**, inspired by modern Figma grocery app UI designs with strict **Role-Based Access Control (RBAC)** without requiring any external database.
 
+
+## 🌐 Live Demo
+
+- **Open the app in a browser:** https://jananim2811.github.io/Janify/
+- **Source code:** https://github.com/JananiM2811/Janify
+- **Admin login:** `admin@grocery.com` / `admin123`
+- **Customer login:** `customer@grocery.com` / `customer123` (or sign up as a new customer)
+- **Razorpay test card:** `4111 1111 1111 1111`, any future expiry, any CVV
+
+> Data (accounts, products, coupons) is saved in each browser/device separately — there is no backend.
+
+### Publish an update
+```bash
+npm run deploy
+```
+
 ---
 
 ## 🔐 Role-Based Access Control (RBAC) Architecture
