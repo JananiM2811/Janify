@@ -17,6 +17,7 @@ import { AppHeader } from '../components/AppHeader';
 import { CategoryPills } from '../components/CategoryPills';
 import { ProductCard } from '../components/ProductCard';
 import { Colors } from '../theme/colors';
+import { useLayout } from '../utils/layout';
 
 const SORT_OPTIONS = [
   { id: 'default', label: 'Relevance', icon: 'list-outline' },
@@ -27,6 +28,7 @@ const SORT_OPTIONS = [
 
 export const ProductsScreen = () => {
   const { isAdmin, products, categories, addProduct, updateProduct } = useApp();
+  const { productColumns } = useLayout();
 
   // Search & Filter State
   const [searchQuery, setSearchQuery] = useState('');
@@ -285,14 +287,17 @@ export const ProductsScreen = () => {
 
       {/* Products Grid */}
       <FlatList
+        // numColumns can't change on a mounted list, so remount when the screen size changes
+        key={`grid-${productColumns}`}
         data={filteredProducts}
         keyExtractor={(item) => item.id}
-        numColumns={2}
+        numColumns={productColumns}
         contentContainerStyle={styles.listContent}
-        columnWrapperStyle={styles.columnWrapper}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
-          <ProductCard product={item} onEdit={handleOpenEditModal} />
+          <View style={[styles.gridCell, { width: `${100 / productColumns}%` }]}>
+            <ProductCard product={item} onEdit={handleOpenEditModal} />
+          </View>
         )}
         ListEmptyComponent={
           <View style={styles.emptyContainer}>
@@ -588,8 +593,9 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingBottom: 40,
   },
-  columnWrapper: {
-    justifyContent: 'space-between',
+  // Each card sits in an equal-width cell; the width comes from the column count
+  gridCell: {
+    padding: 6,
   },
   emptyContainer: {
     alignItems: 'center',

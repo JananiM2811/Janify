@@ -14,6 +14,7 @@ import { useApp } from '../context/AppContext';
 import { AppHeader } from '../components/AppHeader';
 import { ProfileAvatar } from '../components/ProfileAvatar';
 import { Colors } from '../theme/colors';
+import { readableWidth } from '../utils/layout';
 
 export const EditProfileScreen = ({ navigation }) => {
   const { user, isAdmin, updateProfile } = useApp();
@@ -199,6 +200,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
   },
   scrollContent: {
+    ...readableWidth,
     padding: 16,
     paddingBottom: 40,
   },

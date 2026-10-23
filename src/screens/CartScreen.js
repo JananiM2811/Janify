@@ -14,6 +14,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { useApp } from '../context/AppContext';
 import { AppHeader } from '../components/AppHeader';
 import { Colors } from '../theme/colors';
+import { readableWidth } from '../utils/layout';
 import { formatPrice } from '../utils/currency';
 import { FREE_DELIVERY_MIN } from '../context/AppContext';
 import { RazorpayCheckout } from '../components/RazorpayCheckout';
@@ -407,6 +408,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
   },
   listContent: {
+    ...readableWidth,
     padding: 16,
     paddingBottom: 40,
   },

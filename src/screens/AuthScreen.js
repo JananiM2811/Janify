@@ -330,6 +330,9 @@ const styles = StyleSheet.create({
   // flexGrow + center keeps the form in the middle of tall phone screens,
   // and it still scrolls when the keyboard is open
   scrollContent: {
+    width: '100%',
+    maxWidth: 460,
+    alignSelf: 'center',
     flexGrow: 1,
     justifyContent: 'center',
     paddingHorizontal: 20,

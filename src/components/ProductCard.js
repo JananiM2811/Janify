@@ -146,7 +146,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.card,
     borderRadius: 20,
     padding: 12,
-    marginBottom: 16,
     borderWidth: 1,
     borderColor: Colors.border,
     shadowColor: '#000',
@@ -155,8 +154,6 @@ const styles = StyleSheet.create({
     shadowRadius: 6,
     elevation: 3,
     flex: 1,
-    marginHorizontal: 6,
-    maxWidth: '48%',
   },
   topRow: {
     flexDirection: 'row',

@@ -7,11 +7,13 @@ import { ProfileScreen } from '../screens/ProfileScreen';
 import { CustomDrawerContent } from './CustomDrawerContent';
 import { useApp } from '../context/AppContext';
 import { Colors } from '../theme/colors';
+import { useLayout } from '../utils/layout';
 
 const Drawer = createDrawerNavigator();
 
 export const DrawerNavigator = () => {
   const { isAdmin } = useApp();
+  const { isWide } = useLayout();
 
   return (
     <Drawer.Navigator
@@ -19,11 +21,15 @@ export const DrawerNavigator = () => {
       drawerContent={(props) => <CustomDrawerContent {...props} />}
       screenOptions={{
         headerShown: false,
+        // Laptop: menu always visible on the left like a website. Phone: slide-out menu.
+        drawerType: isWide ? 'permanent' : 'front',
         drawerActiveTintColor: Colors.primary,
         drawerInactiveTintColor: Colors.textMuted,
         drawerStyle: {
-          width: 290,
+          width: isWide ? 260 : 290,
           backgroundColor: Colors.white,
+          borderRightWidth: isWide ? 1 : 0,
+          borderRightColor: Colors.border,
         },
       }}
     >

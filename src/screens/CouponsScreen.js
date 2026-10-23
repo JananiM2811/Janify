@@ -13,6 +13,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../context/AppContext';
 import { AppHeader } from '../components/AppHeader';
 import { Colors } from '../theme/colors';
+import { readableWidth } from '../utils/layout';
 
 // Store Owner only: create & delete discount coupons for the whole cart or one product
 export const CouponsScreen = () => {
@@ -157,6 +158,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
   },
   scrollContent: {
+    ...readableWidth,
     padding: 16,
     paddingBottom: 40,
   },

@@ -53,13 +53,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: Colors.surfaceMuted,
   },
-  // On wide screens (laptop browser) keep a phone-sized column in the centre
+  // Full width: each screen adapts itself to phone / tablet / laptop (see src/utils/layout.js)
   container: {
     flex: 1,
-    width: '100%',
-    maxWidth: 480,
-    alignSelf: 'center',
-    overflow: 'hidden',
     backgroundColor: Colors.white,
   },
 });

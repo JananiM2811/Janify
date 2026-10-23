@@ -5,6 +5,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
 import { useApp } from '../context/AppContext';
 import { Colors } from '../theme/colors';
+import { useLayout } from '../utils/layout';
 
 export const AppHeader = ({
   title = 'Janify',
@@ -15,6 +16,7 @@ export const AppHeader = ({
   const navigation = useNavigation();
   const insets = useSafeAreaInsets();
   const { isAdmin, cartCount } = useApp();
+  const { isWide } = useLayout();
 
   const handleOpenCart = () => {
     navigation.navigate('Main', {
@@ -34,7 +36,8 @@ export const AppHeader = ({
           >
             <Ionicons name="arrow-back" size={24} color={Colors.text} />
           </TouchableOpacity>
-        ) : (
+        ) : isWide ? null : (
+          // Laptop has a permanent side menu, so the menu button is phone-only
           <TouchableOpacity
             style={styles.iconButton}
             // Bubbles up to the Drawer navigator from any tab / drawer screen

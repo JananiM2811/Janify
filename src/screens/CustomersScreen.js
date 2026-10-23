@@ -4,6 +4,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../context/AppContext';
 import { AppHeader } from '../components/AppHeader';
 import { Colors } from '../theme/colors';
+import { readableWidth } from '../utils/layout';
 
 const InfoRow = ({ icon, text }) => (
   <View style={styles.infoRow}>
@@ -109,6 +110,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
   },
   searchWrap: {
+    ...readableWidth,
     paddingHorizontal: 16,
     paddingTop: 12,
   },
@@ -130,6 +132,7 @@ const styles = StyleSheet.create({
     marginLeft: 8,
   },
   listContent: {
+    ...readableWidth,
     padding: 16,
     paddingBottom: 40,
   },

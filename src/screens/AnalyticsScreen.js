@@ -5,6 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useApp } from '../context/AppContext';
 import { AppHeader } from '../components/AppHeader';
 import { Colors } from '../theme/colors';
+import { readableWidth } from '../utils/layout';
 import { formatPrice } from '../utils/currency';
 
 const LOW_STOCK_LIMIT = 25;
@@ -122,6 +123,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.background,
   },
   scrollContent: {
+    ...readableWidth,
     padding: 16,
     paddingBottom: 40,
   },

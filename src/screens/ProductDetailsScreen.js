@@ -11,6 +11,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../context/AppContext';
 import { Colors } from '../theme/colors';
+import { readableWidth } from '../utils/layout';
 import { formatPrice } from '../utils/currency';
 
 export const ProductDetailsScreen = ({ route, navigation }) => {
@@ -259,9 +260,11 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   scrollContent: {
+    ...readableWidth,
     paddingBottom: 130,
   },
   scrollContentAdmin: {
+    ...readableWidth,
     paddingBottom: 40,
   },
   imageContainer: {
