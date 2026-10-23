@@ -32,11 +32,10 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "predeploy": "expo export -p web",
-    "deploy": "gh-pages --nojekyll -d dist"
+    "deploy": "node scripts/deploy-gh-pages.js"
   },
   "private": true,
   "devDependencies": {
-    "@expo/ngrok": "^4.1.3",
-    "gh-pages": "^6.3.0"
+    "@expo/ngrok": "^4.1.3"
   }
 }
