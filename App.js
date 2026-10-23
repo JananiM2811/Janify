@@ -30,7 +30,12 @@ export default function App() {
     <GestureHandlerRootView style={styles.root}>
       <SafeAreaProvider>
         <AppProvider>
-          <NavigationContainer>
+          {/* Web: browser tab title (otherwise it shows "undefined" or route names like "Main") */}
+          <NavigationContainer
+            documentTitle={{
+              formatter: (options) => (options?.title ? `${options.title} • Janify` : 'Janify'),
+            }}
+          >
             <View style={styles.container}>
               <RootNavigator />
               <ToastBanner />
