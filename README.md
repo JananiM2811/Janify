@@ -7,7 +7,7 @@ A mobile grocery shopping application built with **React Native & Expo**, inspir
 
 - **Open the app in a browser:** https://jananim2811.github.io/Janify/
 - **Source code:** https://github.com/JananiM2811/Janify
-- **Admin login:** `admin@grocery.com` / `admin123`
+- **Admin login:** `admin@janify.com` / `admin123`
 - **Customer login:** `customer@grocery.com` / `customer123` (or sign up as a new customer)
 - **Razorpay test card:** `4111 1111 1111 1111`, any future expiry, any CVV
 
@@ -25,7 +25,7 @@ npm run deploy
 ### 1. **Store Owner (Admin) — Single Fixed Account**
 - **Unique Account:** There is only **one** Admin account representing the store owner/manager.
 - **Fixed Credentials:**
-  - **Email:** `admin@grocery.com`
+  - **Email:** `admin@janify.com`
   - **Password:** `admin123`
 - **Registration Policy:** Admin account cannot be registered via Sign Up (it is pre-configured and unique).
 - **Owner Privileges:**
@@ -60,7 +60,7 @@ npm run deploy
    - Separate **Sign In** tab (for Owner Admin & Registered Customers) and **Sign Up** tab.
    - Full validation: Valid email format, 6+ character password, name required, password matching.
    - Test accounts:
-     - 👑 **Store Owner (Admin)**: `admin@grocery.com` / `admin123`
+     - 👑 **Store Owner (Admin)**: `admin@janify.com` / `admin123`
      - 👤 **Demo Customer**: `customer@grocery.com` / `customer123`
 2. **Daily Grocery Food Products List Screen (Admin & Customer)** [5 Marks]
    - File: `src/screens/ProductsScreen.js`

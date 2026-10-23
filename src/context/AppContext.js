@@ -20,11 +20,14 @@ export const ROLES = {
   CUSTOMER: 'customer',
 };
 
+// Admin login used before it was changed to admin@janify.com
+const OLD_ADMIN_EMAIL = 'admin@grocery.com';
+
 // Unique Store Owner (Admin) - Single fixed account
 export const ADMIN_OWNER = {
   id: 'admin-owner-1',
   name: 'Admin Alex',
-  email: 'admin@grocery.com',
+  email: 'admin@janify.com',
   password: 'admin123',
   phone: '+91 98400 12345',
   address: 'Janify Store, Anna Nagar, Chennai 600040',
@@ -119,7 +122,13 @@ export const AppProvider = ({ children }) => {
         pairs.forEach(([key, value]) => {
           if (value) {
             try {
-              setters[key](JSON.parse(value));
+              let saved = JSON.parse(value);
+              // Devices that saved the admin before the email change still have the old
+              // default login - switch it to the new one, keeping the admin's other edits.
+              if (key === STORAGE_KEYS.adminAccount && saved.email === OLD_ADMIN_EMAIL) {
+                saved = { ...saved, email: ADMIN_OWNER.email };
+              }
+              setters[key](saved);
             } catch {
               // Ignore corrupt entries and keep the defaults
             }
